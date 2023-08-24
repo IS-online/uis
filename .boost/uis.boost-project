@@ -1,0 +1,41 @@
+{
+  "dataFormatVersion": "1.3.1",
+  "summary": {
+    "projectName": "uis",
+    "summaryUrl": ".boost\\uis.summary.boost-notebook",
+    "filesToAnalyze": 32839,
+    "filesAnalyzed": 0,
+    "issues": [
+      "No issues found"
+    ]
+  },
+  "sectionSummary": {
+    "summary": {
+      "analysisType": "summary",
+      "status": "not-started",
+      "completedCells": 0,
+      "errorCells": 0,
+      "issueCells": 0,
+      "totalCells": 0,
+      "filesAnalyzed": 0
+    }
+  },
+  "files": {},
+  "account": {
+    "refreshed": false,
+    "enabled": false,
+    "status": "",
+    "trialRemaining": 0,
+    "usageThisMonth": 0,
+    "discountedUsage": 0,
+    "balanceDue": 0,
+    "couponType": "",
+    "org": "",
+    "owner": "",
+    "created": "",
+    "creditCardLinked": false
+  },
+  "uiState": {
+    "analysisState": "quiescent"
+  }
+}
