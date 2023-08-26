@@ -141,6 +141,7 @@ Route::group(['prefix' => 'user-staff/',          'as' => 'user-staff',    'midd
     Route::get('subject',               ['as' => '.subject',            'uses' => 'HomeController@subject']);
     Route::get('notice',                ['as' => '.notice',              'uses' => 'HomeController@notice']);
 
+
 });
 
 /*Front Desk Grouping */
@@ -300,6 +301,11 @@ Route::group(['prefix' => 'staff/',                                     'as' => 
 
     Route::get('import',                      ['as' => '.import',             'middleware' => ['ability:super-admin,staff-add'],           'uses' => 'StaffController@importStaff']);
     Route::post('import',                     ['as' => '.bulk.import',        'middleware' => ['ability:super-admin,staff-add'],             'uses' => 'StaffController@handleImportStaff']);
+
+    Route::get('{id}/academic', ['as' => '.academic.form', 'middleware' => ['ability:super-admin,staff-academic-form'], 'uses' => 'StaffController@showAcademicForm']);
+    Route::post('{id}/academic', ['as' => '.academic.store', 'middleware' => ['ability:super-admin,staff-academic-store'], 'uses' => 'StaffController@storeAcademicInfo']);
+    Route::put('{id}/academic/{academicInfoId}', ['as' => '.academic.update', 'middleware' => ['ability:super-admin,staff-academic-update'], 'uses' => 'StaffController@updateAcademicInfo']);
+    Route::delete('{id}/academic/{academicInfoId}', ['as' => '.academic.delete', 'middleware' => ['ability:super-admin,staff-academic-delete'], 'uses' => 'StaffController@deleteAcademicInfo']);
 
 
     /*Staff login access*/

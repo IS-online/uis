@@ -37,6 +37,13 @@
                                     </li>
 
                                     <li>
+                                        <a data-toggle="tab" href="#academicInfo">
+                                            <i class="yellow ace-icon fa fa-graduation-cap bigger-140"></i>
+                                            Akademske informacije
+                                        </a>
+                                    </li>
+
+                                    <li>
                                         <a data-toggle="tab" href="#ledger">
                                             <i class="orange ace-icon fa fa-newspaper-o bigger-140"></i>
                                             Glavna knjiga
@@ -104,6 +111,11 @@
                                     <div id="profile" class="tab-pane in active">
                                         @include($view_path.'.detail.includes.profile')
                                     </div><!-- /#home -->
+
+                                    <div id="academicInfo" class="tab-pane">
+                                        @include($view_path.'.detail.includes.academicInfo')
+                                    </div><!-- /#AcademicInfo -->
+                                    
 
                                     <div id="ledger" class="tab-pane">
                                         @include($view_path.'.detail.includes.transaction')

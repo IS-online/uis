@@ -54,5 +54,10 @@ class Staff extends BaseModel
     {
         return $this->hasMany(Attendance::class,'link_id','id')->where('attendees_type','=',2);
     }
+    public function academicInfo()
+    {
+        return $this->hasOne(StaffAcademicInfo::class);
+    }
+    
 
 }

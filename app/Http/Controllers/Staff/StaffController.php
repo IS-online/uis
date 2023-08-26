@@ -14,6 +14,7 @@ use App\Exports\StaffsExport;
 use App\Http\Controllers\CollegeBaseController;
 use App\Http\Requests\Staff\Registration\AddValidation;
 use App\Http\Requests\Staff\Registration\EditValidation;
+use App\Http\Controllers\Controller;
 use App\Models\Attendance;
 use App\Models\AttendanceStatus;
 use App\Models\Attendence;
@@ -43,6 +44,7 @@ use LaravelQRCode\Facades\QRCode;
 use Libern\QRCodeReader\QRCodeReader;
 use Maatwebsite\Excel\Facades\Excel;
 use ViewHelper;
+use App\Models\StaffAcademicInfo;
 
 class StaffController extends CollegeBaseController
 {
@@ -705,4 +707,65 @@ class StaffController extends CollegeBaseController
 
         return back();
     }
+
+    // Metoda za prikaz forme za dodavanje akademskih informacija
+    public function showAcademicForm($staffId)
+    {
+        $staff = Staff::find($staffId);
+        if (!$staff) {
+            return redirect()->back()->with('error', 'Staff not found.');
+        }
+        return view('staff.academic_form', compact('staff'));
+    }
+
+    // Metoda za čuvanje akademskih informacija
+    public function storeAcademicInfo(Request $request, $staffId)
+    {
+        $staff = Staff::find($staffId);
+        if (!$staff) {
+            return redirect()->back()->with('error', 'Staff not found.');
+        }
+
+        $academicInfo = new StaffAcademicInfo($request->all());
+        $staff->academicInfo()->save($academicInfo);
+
+        return redirect()->route('staff.show', $staffId)->with('success', 'Academic info added successfully.');
+    }
+
+    // Metoda za ažuriranje akademskih informacija
+    public function updateAcademicInfo(Request $request, $staffId, $academicInfoId)
+    {
+        $staff = Staff::find($staffId);
+        if (!$staff) {
+            return redirect()->back()->with('error', 'Staff not found.');
+        }
+
+        $academicInfo = StaffAcademicInfo::find($academicInfoId);
+        if (!$academicInfo) {
+            return redirect()->back()->with('error', 'Academic info not found.');
+        }
+
+        $academicInfo->update($request->all());
+
+        return redirect()->route('staff.show', $staffId)->with('success', 'Academic info updated successfully.');
+    }
+
+    // Metoda za brisanje akademskih informacija
+    public function deleteAcademicInfo($staffId, $academicInfoId)
+    {
+        $staff = Staff::find($staffId);
+        if (!$staff) {
+            return redirect()->back()->with('error', 'Staff not found.');
+        }
+
+        $academicInfo = StaffAcademicInfo::find($academicInfoId);
+        if (!$academicInfo) {
+            return redirect()->back()->with('error', 'Academic info not found.');
+        }
+
+        $academicInfo->delete();
+
+        return redirect()->route('staff.show', $staffId)->with('success', 'Academic info deleted successfully.');
+    }
+
 }

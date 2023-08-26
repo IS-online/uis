@@ -3,10 +3,10 @@
   "summary": {
     "projectName": "uis",
     "summaryUrl": ".boost\\uis.summary.boost-notebook",
-    "filesToAnalyze": 32839,
+    "filesToAnalyze": 32918,
     "filesAnalyzed": 0,
     "issues": [
-      "No issues found"
+      "No summary file found at .boost\\uis.summary.boost-notebook"
     ]
   },
   "sectionSummary": {
@@ -22,17 +22,17 @@
   },
   "files": {},
   "account": {
-    "refreshed": false,
-    "enabled": false,
-    "status": "",
-    "trialRemaining": 0,
+    "refreshed": true,
+    "enabled": true,
+    "status": "active",
+    "trialRemaining": 100,
     "usageThisMonth": 0,
     "discountedUsage": 0,
     "balanceDue": 0,
-    "couponType": "",
-    "org": "",
-    "owner": "",
-    "created": "",
+    "couponType": "Polyverse Boost Free Trial",
+    "org": "IS-online",
+    "owner": "iug_mehom@outlook.com",
+    "created": "2023-07-27",
     "creditCardLinked": false
   },
   "uiState": {
