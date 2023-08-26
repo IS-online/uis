@@ -2,7 +2,14 @@
     <div class="col-xs-12">
         <h4 class="header large lighter blue"><i class="fa fa-university" aria-hidden="true"></i>&nbsp;Akademske informacije</h4>
         <div class="table-responsive">
-        
+                    <!-- Dugme za dodavanje nove akademske informacije  -->
+                    @if(isset($staff))
+                    <a href="{{ route('staff.academic.form', ['staff_id' => $staff->id]) }}" class="btn btn-primary btn-minier">
+                        <i class="ace-icon fa fa-plus bigger-130"></i> Dodaj
+                    </a>
+                @else
+                    <p>Staff not found.</p>
+                @endif
             <table id="main-table" class="table table-striped table-bordered table-hover">
                 <thead>
                     <tr style="background-color: #438EB9; color: white;">
