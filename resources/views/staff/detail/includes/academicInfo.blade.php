@@ -4,7 +4,7 @@
         <div class="table-responsive">
                     <!-- Dugme za dodavanje nove akademske informacije  -->
                     @if(isset($staff))
-                    <a href="{{ route('staff.academic.form', ['staff_id' => $staff->id]) }}" class="btn btn-primary btn-minier">
+                    <a href="{{ route('staff.academic.form', ['id' => $staff->id]) }}" class="btn btn-primary btn-minier">
                         <i class="ace-icon fa fa-plus bigger-130"></i> Dodaj
                     </a>
                 @else

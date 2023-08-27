@@ -709,14 +709,17 @@ class StaffController extends CollegeBaseController
     }
 
     // Metoda za prikaz forme za dodavanje akademskih informacija
+    // StaffController.php
     public function showAcademicForm($staffId)
     {
+        dd($staffId);  // Ovo će ispisati vrednost staffId
         $staff = Staff::find($staffId);
         if (!$staff) {
             return redirect()->back()->with('error', 'Staff not found.');
         }
         return view('staff.academic_form', compact('staff'));
     }
+
 
     // Metoda za čuvanje akademskih informacija
     public function storeAcademicInfo(Request $request, $staffId)

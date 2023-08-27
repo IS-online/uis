@@ -1607,6 +1607,32 @@ class PermissionTableSeeder extends Seeder
                 'description' => 'Staff Bulk Action'
             ],
 
+            /*Education*/
+            [
+                'group' => 'Education',
+                'name' => 'education-index',
+                'display_name' => 'Index',
+                'description' => 'Education Index'
+            ],
+            [
+                'group' => 'Education',
+                'name' => 'education-add',
+                'display_name' => 'Add',
+                'description' => 'Add Education'
+            ],
+            [
+                'group' => 'Education',
+                'name' => 'education-edit',
+                'display_name' => 'Edit',
+                'description' => 'Edit Education'
+            ],
+            [
+                'group' => 'Education',
+                'name' => 'education-delete',
+                'display_name' => 'Delete',
+                'description' => 'Delete Education'
+            ],
+
 
         /*Staff Document*/
             [
